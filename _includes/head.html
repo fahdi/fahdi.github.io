@@ -2,11 +2,30 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ " /css/main.css " | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $.ajax({
+      type: "GET",
+      url: 'https://api.github.com/users/{{ site.github.user }}/repos?callback=?',
+      data: { type: "all", sort: "pushed", direction: "desc" },
+      dataType: 'json',
+      success: function(resp) {
+        if (resp.data.length > 0) {
+          $('#gh_repos').html('<div class="home"><ul></ul></div>');
+          for (var i = 0; i < $(resp.data).length && i < {{ site.github.repo_count }}; i++) {
+            $('#gh_repos > .home > ul').append(
+              '<li><a href="' + resp.data[i]['html_url'] + '">' + resp.data[i]['name'] + '</a> ' +  (resp.data[i]['description'] ? resp.data[i]['description'] : '') + '</li>'
+            );
+          }
+        } else {
+          $('#gh_repos').html('<p>&#128049; I can haz code? </p>');
+        }
+      }
+    });
+  </script>
 </head>

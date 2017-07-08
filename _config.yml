@@ -28,6 +28,12 @@ theme: minima
 gems:
   - jekyll-feed
 
+github:
+  user: fahdi
+  repo_count: 90
+  show_profile_link: false  
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
