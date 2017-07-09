@@ -27,9 +27,14 @@ flickr:
   name: flickr
   url: https://www.flickr.com/photos/fahdmurtaza/
 
+quora: 
+  url1: https://www.quora.com/profile/Fahad-Murtaza-3
+  url2: https://www.quora.com/profile/Fahad-Murtaza-1
+  nicename: fahadmurtaza  
+
 blog:
   url: http://fahdmurtaza.com
-  name: fahdmurtaza.com    
+  name: www.fahdmurtaza.com    
 
 github:
   user: fahdi
