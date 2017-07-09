@@ -21,18 +21,30 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: fahdmurtaza
 github_username:  fahdi
+facebook_username:  fahd.murtaza
+
+flickr:
+  name: flickr
+  url: https://www.flickr.com/photos/fahdmurtaza/
+
+blog:
+  url: http://fahdmurtaza.com
+  name: fahdmurtaza.com    
+
+github:
+  user: fahdi
+  repo_count: 90
+  show_profile_link: false
+
+about:
+  showMe: true
+
 
 # Build settings
 markdown: kramdown
 theme: minima
 gems:
-  - jekyll-feed
-
-github:
-  user: fahdi
-  repo_count: 90
-  show_profile_link: false  
-
+  - jekyll-feed  
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
