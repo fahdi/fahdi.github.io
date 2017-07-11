@@ -41,6 +41,18 @@ github:
   repo_count: 90
   show_profile_link: false
 
+leetcode: 
+  url: https://leetcode.com/
+  username: fahadmurtaza
+  profile_url: https://leetcode.com/fahadmurtaza/
+  name: Fahad Murtaza
+
+hackerrank: 
+  url: https://www.hackerrank.com/
+  username: fahadmurtaza
+  profile_url: https://www.hackerrank.com/fahadmurtaza
+  name: Fahad Murtaza
+
 about:
   showMe: true
 
