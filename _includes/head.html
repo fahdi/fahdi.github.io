@@ -27,5 +27,24 @@
         }
       }
     });
+
+    $.ajax({
+      type: "GET",
+      url: 'http://www.fahdmurtaza.com/wp-json/wp/v2/posts?per_page=100',
+      data: { type: "all", sort: "pushed", direction: "desc" },
+      dataType: 'json',
+      success: function(resp) {
+        if (resp.length > 0) {          
+          $('#blog_posts').html('<div class="home"><ul></ul></div>');
+          for (var i = 0; i < $(resp).length; i++) {
+            $('#blog_posts > .home > ul').append(
+              '<li><a href="' + resp[i].link + '">' + resp[i].title.rendered + '</a></li>'
+            );
+          }
+        } else {
+          $('#blog_posts').html('<p>&#128049; LOLCODE:404. I Cant haz blogz postz</p>');
+        }
+      }
+    });
   </script>
 </head>
