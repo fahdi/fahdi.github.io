@@ -11,7 +11,7 @@
   <script>
     $.ajax({
       type: "GET",
-      url: 'https://api.github.com/users/{{ site.github.user }}/repos?callback=?',
+      url: '//api.github.com/users/{{ site.github.user }}/repos?callback=?',
       data: { type: "all", sort: "pushed", direction: "desc" },
       dataType: 'json',
       success: function(resp) {
@@ -28,9 +28,9 @@
       }
     });
 
-    /*$.ajax({
+    $.ajax({
       type: "GET",
-      url: 'http://www.fahdmurtaza.com/wp-json/wp/v2/posts?per_page=100',
+      url: '//www.fahdmurtaza.com/wp-json/wp/v2/posts?per_page=100',
       data: { type: "all", sort: "pushed", direction: "desc" },
       dataType: 'json',
       success: function(resp) {
@@ -45,6 +45,6 @@
           $('#blog_posts').html('<p>&#128049; LOLCODE:404. I Cant haz blogz postz</p>');
         }
       }
-    });*/
+    });
   </script>
 </head>
